@@ -27,7 +27,7 @@ public class ConfigScreen extends Screen {
     }
 
     public ConfigScreen(Screen parent, MinecraftClient client, int width, int height) {
-        super(Text.of("Vectorientation Config"));
+        super(Text.translatable("text.vectorientation.config_title"));
         this.parent = parent;
         init(client, width, height);
         setup();
@@ -55,7 +55,7 @@ public class ConfigScreen extends Screen {
         toggleMinecarts = CheckboxWidget.builder(Text.of(""), textRenderer)
                 .pos(posX, posY)
                 .checked(Vectorientation.MINECARTS)
-                .tooltip(Tooltip.of(Text.of("Warning: Very janky!")))
+                .tooltip(Tooltip.of(Text.translatable("text.vectorientation.warning")))
                 .callback(new CheckboxWidget.Callback() {
                     @Override
                     public void onValueChange(CheckboxWidget checkbox, boolean checked) {
